@@ -570,4 +570,5 @@
         <livewire:posts.create />
     </x-general.modal>
 
+
 </div>
