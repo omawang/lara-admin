@@ -17,6 +17,26 @@
 
     {{-- flowbite --}}
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
+    <script data-navigate-once>
+        document.addEventListener('alpine:init', () => {
+            let state = Alpine.reactive({
+                path: window.location.pathname
+            })
+
+            document.addEventListener('livewire:navigated', () => {
+                queueMicrotask(() => {
+                    state.path = window.location.pathname
+                })
+            })
+
+            Alpine.magic('current', (el) => (expected = '') => {
+                let strip = (subject) => subject.replace(/^\/|\/$/g, '')
+
+                return strip(state.path) === strip(expected)
+            })
+        })
+    </script>
 </head>
 
 <body class="font-sans antialiased bg-gray-50 dark:bg-gray-900">

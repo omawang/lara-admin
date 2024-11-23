@@ -24,15 +24,15 @@
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">lara-admin</span>
             </a>
         </div>
-        @persist('navlinks')
-        <div class="flex items-center lg:order-2">
-            <!-- Notifications -->
-            <x-layouts.notifications-dropdown />
-            <!-- Apps -->
-            <x-layouts.apps-dropdown />
-            
-            <livewire:layouts.profile-dropdown />
-        </div>
+        @persist('div')
+            <div class="flex items-center lg:order-2">
+                <!-- Notifications -->
+                <x-layouts.notifications-dropdown />
+                <!-- Apps -->
+                <x-layouts.apps-dropdown />
+
+                <livewire:layouts.profile-dropdown />
+            </div>
         @endpersist
     </div>
 </nav>

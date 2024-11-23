@@ -20,14 +20,16 @@
         </div>
         <div
             class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-            <x-forms.button type="button" variant="primary" class="flex items-center justify-center">
+            <x-forms.button type="button" variant="primary" data-modal-target="default-modal"
+                data-modal-toggle="default-modal" class="flex items-center justify-center">
                 <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true">
                     <path clip-rule="evenodd" fill-rule="evenodd"
                         d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
                 </svg>
-                Add product
+                Add post
             </x-forms.button>
+
             <div class="flex items-center space-x-3 w-full md:w-auto">
                 <x-forms.button id="actionsDropdownButton" data-dropdown-toggle="actionsDropdown"
                     class="w-full md:w-auto flex items-center justify-center" type="button">
@@ -561,4 +563,11 @@
             </li>
         </ul>
     </nav>
+
+    {{-- create post modal --}}
+    <x-general.modal>
+        <x-slot:title>Add post</x-slot:title>
+        <livewire:posts.create />
+    </x-general.modal>
+
 </div>
