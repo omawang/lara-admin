@@ -570,4 +570,13 @@
         <livewire:posts.create />
     </x-general.modal>
 
+    @script
+    <script>
+        $wire.on('close-post-create-modal',  () => {
+            console.log('modal-closed');
+            document.getElementById('modal-close-button').click();
+        });
+    </script>
+    @endscript
+
 </div>
