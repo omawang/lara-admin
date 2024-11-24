@@ -26,7 +26,7 @@ class Create extends Component
 
         // Optionally reset the form fields
         $this->reset(['title', 'body', 'isPublished']);
-        $this->dispatch('close-post-create-modal');
+        $this->dispatch('post-created');
     }
 
     public function render()
