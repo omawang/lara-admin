@@ -565,10 +565,9 @@
     </nav>
 
     {{-- create post modal --}}
-    <x-general.modal>
+    <x-general.modal x-on:close-post-create-modal.window="$refs.modalClose.click()">
         <x-slot:title>Add post</x-slot:title>
         <livewire:posts.create />
     </x-general.modal>
-
 
 </div>
